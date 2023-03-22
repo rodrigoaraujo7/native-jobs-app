@@ -8,6 +8,9 @@ import {
   View,
 } from "react-native";
 
+// custom hooks
+import useFecth from "../../../hook/useFetch";
+
 // expo-router
 import { useRouter } from "expo-router";
 
@@ -22,8 +25,13 @@ import PopularJobCard from "../../common/cards/popular/PopularJobCard";
 
 const Popularjobs = () => {
   const router = useRouter();
-  const isLoading = false;
-  const error = false;
+
+  const { data, isLoading, error } = useFecth("search", {
+    query: "React developer",
+    num_pages: 1,
+  });
+
+  // console.log(data);
 
   return (
     <View style={styles.container}>
