@@ -21,7 +21,7 @@ import { icons, SIZES } from "../../../constants";
 // data
 const jobTypes = ["Full-time", "Part-time", "Contractor"];
 
-const Welcome = () => {
+const Welcome = ({ profileName }) => {
   const router = useRouter();
 
   // declaring a useState to define a exclusive style for a 'Full-time'
@@ -30,7 +30,7 @@ const Welcome = () => {
   return (
     <View>
       <View style={styles.container}>
-        <Text style={styles.userName}>Hello Rodrigo</Text>
+        <Text style={styles.userName}>Hello {profileName}</Text>
         <Text style={styles.welcomeMessage}>Find your perfect job</Text>
       </View>
 

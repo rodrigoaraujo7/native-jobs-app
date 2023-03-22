@@ -40,7 +40,7 @@ const Home = () => {
             padding: SIZES.medium
           }}
         >
-          <Welcome />
+          <Welcome profileName="Rodrigo" />
           <Popularjobs />
           <Nearbyjobs />
         </View>
