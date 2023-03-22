@@ -41,7 +41,7 @@ const Home = () => {
           }}
         >
           <Welcome profileName="Rodrigo" />
-          <Popularjobs />
+          {/* <Popularjobs /> */}
           <Nearbyjobs />
         </View>
       </ScrollView>
