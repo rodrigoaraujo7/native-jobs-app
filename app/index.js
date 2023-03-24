@@ -1,5 +1,5 @@
 // react
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { SafeAreaView, ScrollView, View } from 'react-native';
 
 // expo router
@@ -18,6 +18,14 @@ import {
 
 const Home = () => {
   const router = useRouter();
+
+  // useEffect to apply a delay in my component to fix a API error
+  const [showComponent, setShowComponent] = useState(false);
+  useEffect(() => {
+    setTimeout(() => {
+      setShowComponent(true)
+    }, '3000')
+  }, [])
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
@@ -41,8 +49,10 @@ const Home = () => {
           }}
         >
           <Welcome profileName="Rodrigo" />
-          {/* <Popularjobs /> */}
-          <Nearbyjobs />
+          <Popularjobs />
+
+          {/* rendering after 3 seconds */}
+          {showComponent ? <Nearbyjobs /> : null}
         </View>
       </ScrollView>
     </SafeAreaView>
