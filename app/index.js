@@ -24,7 +24,7 @@ const Home = () => {
   useEffect(() => {
     setTimeout(() => {
       setShowComponent(true)
-    }, '3000')
+    }, 1000)
   }, [])
 
   return (
@@ -53,6 +53,7 @@ const Home = () => {
 
           {/* rendering after 3 seconds */}
           {showComponent ? <Nearbyjobs /> : null}
+          {/* <Nearbyjobs /> */}
         </View>
       </ScrollView>
     </SafeAreaView>

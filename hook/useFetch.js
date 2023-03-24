@@ -26,7 +26,7 @@ const useFecth = (endpoint, query) => {
       setIsLoading(false)
     } catch(error) {
       setError(error);
-      console.log(error.response.status);
+      // console.log(error.response.status);
       alert('There is an error')
     } finally {
       setIsLoading(false);
