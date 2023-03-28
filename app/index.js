@@ -53,7 +53,6 @@ const Home = () => {
 
           {/* rendering after 3 seconds */}
           {showComponent ? <Nearbyjobs /> : null}
-          {/* <Nearbyjobs /> */}
         </View>
       </ScrollView>
     </SafeAreaView>
