@@ -11,7 +11,7 @@ const About = ({ info }) => {
       <Text style={styles.headText}>About</Text>
 
       <View style={styles.contentBox}>
-        <Text style={styles.contentBox}>{info}</Text>
+        <Text style={styles.contextText}>{info}</Text>
       </View>
     </View>
   );
