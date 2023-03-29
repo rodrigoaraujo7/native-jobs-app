@@ -18,13 +18,14 @@ import {
 
 const Home = () => {
   const router = useRouter();
+  const [searchTerm, setSearchTerm] = useState('')
 
   // useEffect to apply a delay in my component to fix a API error
   const [showComponent, setShowComponent] = useState(false);
   useEffect(() => {
     setTimeout(() => {
       setShowComponent(true)
-    }, 1000)
+    }, 3000)
   }, [])
 
   return (
@@ -48,7 +49,17 @@ const Home = () => {
             padding: SIZES.medium
           }}
         >
-          <Welcome profileName="Rodrigo" />
+          <Welcome
+            profileName="Rodrigo"
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+            handleClick={() => {
+              if(searchTerm) {
+                router.push(`/search/${searchTerm}`)
+              }
+            }}
+          />
+
           <Popularjobs />
 
           {/* rendering after 3 seconds */}
