@@ -29,7 +29,7 @@ import {
 } from '../../components';
 
 // new tabs
-const tabs = ["About", "Qualifications", "Responsabilities"];
+const tabs = ["About", "Qualifications", "Responsibilities"];
 
 const JobDetails = () => {
   const params = useSearchParams();
@@ -50,14 +50,17 @@ const JobDetails = () => {
         return <JobAbout
           info={data[0].job_description ?? 'No data provided'}
         />
-        break;
       case 'Qualifications':
         return <Specifics
           title='Qualifications'
           points={data[0].job_highlights?.Qualifications ?? ['N/A']}
         />
-        break;
-      case 'Responsabilities':
+      case 'Responsibilities':
+        return <Specifics
+          title='Responsibilities'
+          points={data[0].job_highlights?.Responsibilities ?? ['N/A']}
+        />
+      default:
         break;
     }
   }
